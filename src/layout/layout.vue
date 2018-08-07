@@ -19,10 +19,10 @@
         </el-col>
       </el-row>
     </el-container>
-    <el-container :style="{height:pageHeight}" style="overflow-x: hidden; overflow-y: auto">
-      <el-main style="height:100%;width:100%;padding-bottom:0">
+    <el-container>
+      <div style="height:100%;width:100%;padding-bottom:0">
         <router-view></router-view>
-      </el-main>
+      </div>
     </el-container>
   </el-container>
 </template>
@@ -37,7 +37,6 @@ export default {
   },
   data () {
     return {
-      pageHeight: 'auto',
       activeIndex: '1'
     };
   },
@@ -45,12 +44,6 @@ export default {
     handleSelect (key, keyPath) {
       console.log(key, keyPath);
     }
-  },
-  created () {
-    this.pageHeight = (document.documentElement.clientHeight - 220) + 'px';
-    window.addEventListener('resize', () => {
-      this.pageHeight = (document.documentElement.clientHeight - 220) + 'px';
-    }, false);
   }
 };
 </script>
