@@ -1,20 +1,16 @@
 <template>
     <el-container>
-        <el-header>
-            <div>
+        <el-header style="height:160px">
                 <Header></Header>
-            </div>
         </el-header>
         <el-container>
             <el-main>
-                <div>
+                <div :style="{height:pageHeight}">
                     <router-view></router-view>
                 </div>
             </el-main>
-            <el-aside width="200px">
-                <div>
+            <el-aside width="28%">
                     <Aside></Aside>
-                </div>
             </el-aside>
         </el-container>
         <el-footer>
@@ -32,6 +28,17 @@ import Footer from './foot';
 export default {
   components: {
     Header, Aside, Footer
+  },
+  data () {
+    return {
+      pageHeight: 'auto'
+    };
+  },
+  created () {
+    this.pageHeight = (document.documentElement.clientHeight - 260) + 'px';
+    window.addEventListener('resize', () => {
+      this.pageHeight = (document.documentElement.clientHeight - 260) + 'px';
+    }, false);
   }
 };
 </script>
