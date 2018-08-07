@@ -1,7 +1,7 @@
 <template>
     <el-container>
         <el-header style="height:160px">
-                <Header></Header>
+            <Header></Header>
         </el-header>
         <el-container>
             <el-main>
@@ -10,7 +10,7 @@
                 </div>
             </el-main>
             <el-aside width="28%">
-                    <Aside></Aside>
+                <Aside></Aside>
             </el-aside>
         </el-container>
         <el-footer>
@@ -46,21 +46,28 @@ export default {
 <style>
 .el-header,
 .el-footer {
-  background-color: #b3c0d1;
   color: #333;
   text-align: center;
   line-height: 60px;
 }
 
+.el-header {
+  background: -webkit-gradient(
+    linear,
+    0 0,
+    0 bottom,
+    from(#484848),
+    to(#5a5a5a)
+  );
+}
+
 .el-aside {
-  background-color: #d3dce6;
   color: #333;
   text-align: center;
   line-height: 200px;
 }
 
 .el-main {
-  background-color: #e9eef3;
   color: #333;
   text-align: center;
   line-height: 160px;
