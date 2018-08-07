@@ -19,21 +19,14 @@
                 </el-col>
             </el-row>
         </el-container>
-        <el-container>
+        <el-container :style="{height:pageHeight}">
             <el-main>
-                <div :style="{height:pageHeight}">
-                    <router-view></router-view>
-                </div>
+                <router-view></router-view>
             </el-main>
-            <el-aside width="28%">
-                <Aside></Aside>
-            </el-aside>
         </el-container>
-        <el-footer>
-            <div>
-                <Footer></Footer>
-            </div>
-        </el-footer>
+        <!-- <el-container>
+            <Footer style="height:50px;width:100%"></Footer>
+        </el-container> -->
     </el-container>
 </template>
 
@@ -57,23 +50,24 @@ export default {
     }
   },
   created () {
-    this.pageHeight = (document.documentElement.clientHeight - 260) + 'px';
+    this.pageHeight = (document.documentElement.clientHeight - 220) + 'px';
     window.addEventListener('resize', () => {
-      this.pageHeight = (document.documentElement.clientHeight - 260) + 'px';
+      this.pageHeight = (document.documentElement.clientHeight - 220) + 'px';
     }, false);
   }
 };
 </script>
 
 <style>
-.el-header,
 .el-footer {
   color: #333;
   text-align: center;
-  line-height: 90px;
 }
 
 .el-header {
+  color: #333;
+  text-align: center;
+  line-height: 90px;
   background: -webkit-gradient(
     linear,
     0 0,
@@ -93,18 +87,5 @@ export default {
   color: #333;
   text-align: center;
   line-height: 160px;
-}
-
-body > .el-container {
-  margin-bottom: 40px;
-}
-
-.el-container:nth-child(5) .el-aside,
-.el-container:nth-child(6) .el-aside {
-  line-height: 260px;
-}
-
-.el-container:nth-child(7) .el-aside {
-  line-height: 320px;
 }
 </style>
