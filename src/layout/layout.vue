@@ -4,6 +4,22 @@
             <Header></Header>
         </el-header>
         <el-container>
+            <el-row :gutter="0" style="width:100%;background-color: #444;" type=flex align='middle'>
+                <el-col :span="11" :offset="5" align='middle'>
+                    <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect" background-color="#444" text-color="#fff" active-text-color="#56adf9" style="border-bottom:none">
+                        <el-menu-item index="1">处理中心</el-menu-item>
+                        <el-menu-item index="2">消息中心</el-menu-item>
+                        <el-menu-item index="3">消息中心</el-menu-item>
+                        <el-menu-item index="4">消息中心</el-menu-item>
+                    </el-menu>
+                </el-col>
+                <el-col :span="4">
+                    <el-input placeholder="请输入内容" prefix-icon="el-icon-search">
+                    </el-input>
+                </el-col>
+            </el-row>
+        </el-container>
+        <el-container>
             <el-main>
                 <div :style="{height:pageHeight}">
                     <router-view></router-view>
@@ -31,8 +47,14 @@ export default {
   },
   data () {
     return {
-      pageHeight: 'auto'
+      pageHeight: 'auto',
+      activeIndex: '1'
     };
+  },
+  methods: {
+    handleSelect (key, keyPath) {
+      console.log(key, keyPath);
+    }
   },
   created () {
     this.pageHeight = (document.documentElement.clientHeight - 260) + 'px';
@@ -48,7 +70,7 @@ export default {
 .el-footer {
   color: #333;
   text-align: center;
-  line-height: 60px;
+  line-height: 90px;
 }
 
 .el-header {
