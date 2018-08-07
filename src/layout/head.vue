@@ -1,6 +1,6 @@
 <template>
     <el-container>
-        <h1 style="margin-left:20%;font-size:30px">
+        <h1 style="margin-left:20%;font-size:30px;color:#fff">
             John Blog
         </h1>
     </el-container>
