@@ -4,24 +4,25 @@
       <Header></Header>
     </el-header>
     <el-container>
-      <el-row :gutter="0" style="width:100%;background-color: #444;" type=flex align='middle'>
-        <el-col :span="11" :offset="5" align='middle'>
-          <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect" background-color="#444" text-color="#fff" active-text-color="#56adf9" style="border-bottom:none;">
-            <el-menu-item index="1" style="font-size:17px">主页</el-menu-item>
-            <el-menu-item index="2" style="font-size:17px">归档</el-menu-item>
-            <el-menu-item index="3" style="font-size:17px">说说</el-menu-item>
-            <el-menu-item index="4" style="font-size:17px">收藏</el-menu-item>
-          </el-menu>
-        </el-col>
-        <el-col :span="4">
-          <el-input placeholder="请输入内容" prefix-icon="el-icon-search">
-          </el-input>
-        </el-col>
-      </el-row>
+      <Menu></Menu>
     </el-container>
     <el-container>
       <div style="height:100%;width:100%;padding-bottom:0">
-        <router-view></router-view>
+        <el-main style="overflow:unset">
+          <el-container>
+            <el-row :gutter="20" style="width:100%">
+              <el-col :span="14" :offset="2">
+                <router-view></router-view>
+              </el-col>
+              <el-col :span="6" :offset="1">
+                <Siderbar></Siderbar>
+              </el-col>
+            </el-row>
+          </el-container>
+          <el-container>
+            <Footer style="height:50px;width:100%"></Footer>
+          </el-container>
+        </el-main>
       </div>
     </el-container>
   </el-container>
@@ -29,26 +30,22 @@
 
 <script>
 import Header from './head';
-import Aside from './aside';
+import Siderbar from './sideBar';
 import Footer from './foot';
+import Menu from './menu';
 export default {
   components: {
-    Header, Aside, Footer
+    Header, Siderbar, Footer, Menu
   },
   data () {
     return {
-      activeIndex: '1'
+
     };
-  },
-  methods: {
-    handleSelect (key, keyPath) {
-      console.log(key, keyPath);
-    }
   }
 };
 </script>
 
-<style>
+<style lang="scss">
 .el-footer {
   color: #333;
   text-align: center;
