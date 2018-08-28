@@ -26,7 +26,7 @@ export default {
     fetch('artical/list').then((data) => {
       if (data.status === 'true') {
         data.list.forEach((tmp) => {
-          tmp.subString = tmp.content.substring(0, 100) + '…';
+          tmp.subString = tmp.content.substring(0, 100) + '...';
         });
         this.articalData = data.list;
       } else {
@@ -39,7 +39,7 @@ export default {
 
 <style lang="scss" scoped>
 .articalCard {
-  background-color: white;
+  background-color: #F7FCF6;
   margin-bottom: 50px;
   display: flex;
   padding: 20px;

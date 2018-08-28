@@ -8,7 +8,7 @@
     </el-container>
     <el-container>
       <div style="height:100%;width:100%;padding-bottom:0">
-        <el-main style="overflow:unset">
+        <el-main style="overflow:unset;padding-bottom:0;">
           <el-container>
             <el-row :gutter="20" style="width:100%">
               <el-col :span="14" :offset="2">
