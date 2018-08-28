@@ -26,7 +26,7 @@ export default {
     fetch('artical/list').then((data) => {
       if (data.status === 'true') {
         data.list.forEach((tmp) => {
-          tmp.subString = tmp.content.substring(0, 100) + '...';
+          tmp.subString = tmp.content.substring(0, 200) + '...';
         });
         this.articalData = data.list;
       } else {

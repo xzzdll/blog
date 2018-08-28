@@ -15,18 +15,27 @@
         </span>
       </div>
       <div style="height:50%;padding-top:15px;text-align:left">
-        <span @click="handleClick('https://github.com/JohnNight')"><i class="fa fa-github-square" style="font-size:32px;"></i></span>
-        <span @click="handleClick('tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=634408262&website=www.oicqzone.com')" style="margin-left:10px"><i class="fa fa-qq" style="font-size:27px;"></i></span>
+        <span @click="handleClick('https://github.com/JohnNight')">
+          <i class="fa fa-github-square" style="font-size:32px;"></i>
+        </span>
+        <span @click="handleClick('tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=634408262&website=www.oicqzone.com')" style="margin-left:10px">
+          <i class="fa fa-qq" style="font-size:27px;"></i>
+        </span>
       </div>
     </div>
-    <div class="card" style="height:100px;">
+    <div class="card" style="height:150px;">
       <div class="card_head" style="height:50%;">
         <span class="title">
           云标签
         </span>
       </div>
       <div style="height:50%;padding-top:15px;text-align:left">
-
+        <el-button type="primary" round size="mini">ES6</el-button>
+        <el-button type="success" round size="mini">React</el-button>
+        <el-button type="info" round size="mini">Vue</el-button>
+        <div style="height:5px"></div>
+        <el-button type="warning" round size="mini" style="margin-left:0">Node</el-button>
+        <el-button type="danger" round size="mini">Css</el-button>
       </div>
     </div>
     <div class="card">
@@ -35,19 +44,36 @@
           文章列表
         </span>
       </div>
-      <div style="height:80%">
-
-      </div>
+      <ui style="height:80%;text-align:left;">
+        <li :key="index" v-for="(item,index) in articalData" style="margin-top:15px;">
+          <a href="#" style="color: #40a9ff">{{item.title}}</a>
+        </li>
+      </ui>
     </div>
   </div>
 </template>
 
 <script>
+import { fetch } from '@/fetch/api';
 export default {
+  data () {
+    return {
+      articalData: []
+    };
+  },
   methods: {
     handleClick (url) {
       window.open(url);
     }
+  },
+  mounted () {
+    fetch('artical/list').then((data) => {
+      if (data.status === 'true') {
+        this.articalData = data.list;
+      } else {
+        this.$message.error(data.message);
+      }
+    });
   }
 };
 </script>
