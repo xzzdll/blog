@@ -4,7 +4,9 @@ import qs from 'qs';
 // axios 配置
 axios.defaults.timeout = 5000;
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
-axios.defaults.baseURL = 'http://localhost:8080/';
+// axios.defaults.baseURL = 'http://localhost:8080/';
+axios.defaults.baseURL = 'http://47.98.115.136:3000/';
+axios.defaults.withCredentials = true;
 
 // POST传参序列化，请求拦截器
 axios.interceptors.request.use((config) => {
