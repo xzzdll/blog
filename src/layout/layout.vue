@@ -12,7 +12,9 @@
           <el-container>
             <el-row :gutter="20" style="width:100%">
               <el-col :span="14" :offset="2">
-                <router-view></router-view>
+                <transition name="fade">
+                  <router-view></router-view>
+                  </transition>
               </el-col>
               <el-col :span="6" :offset="1">
                 <Siderbar></Siderbar>
@@ -67,5 +69,12 @@ export default {
 .el-main {
   color: #333;
   text-align: center;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 </style>

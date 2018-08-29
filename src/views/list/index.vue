@@ -1,14 +1,14 @@
 <template>
-<div>
-  <div class="articalCard" :key="index" v-for="(item,index) in articalData">
-    <div class="articalCardTitle">{{item.title}}</div>
-    <div class="articalCardBody" v-html='item.subString'>
-      {{item.subString}}
+  <div>
+    <div class="articalCard" :key="index" v-for="(item,index) in articalData">
+      <div class="articalCardTitle">{{item.title}}</div>
+      <div class="articalCardBody" v-html='item.subString'>
+        {{item.subString}}
+      </div>
+      <div class="articalCardfoot">
+        <span @click="showArtical(item._id)">阅读全文 > ></span>
+      </div>
     </div>
-    <div class="articalCardfoot">
-      <span>阅读全文 > ></span>
-    </div>
-  </div>
   </div>
 </template>
 
@@ -33,13 +33,18 @@ export default {
         this.$message.error(data.message);
       }
     });
+  },
+  methods: {
+    showArtical (id) {
+      this.$router.push({ path: '/artical', query: { id: id } });
+    }
   }
 };
 </script>
 
 <style lang="scss" scoped>
 .articalCard {
-  background-color: #F7FCF6;
+  background-color: #f7fcf6;
   margin-bottom: 50px;
   display: flex;
   padding: 20px;

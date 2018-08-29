@@ -38,18 +38,18 @@
         <el-button type="danger" round size="mini">Css</el-button>
       </div>
     </div>
-    <div class="card">
+    <!-- <div class="card">
       <div class="card_head">
         <span class="title">
           文章列表
         </span>
       </div>
-      <ui style="height:80%;text-align:left;">
+      <ul style="height:80%;text-align:left;padding-left:20px">
         <li :key="index" v-for="(item,index) in articalData" style="margin-top:15px;">
-          <a href="#" style="color: #40a9ff">{{item.title}}</a>
+          <span href="#" style="cursor:pointer;color:#40a9ff" @click="showArtical(item._id)">{{item.title}}</span>
         </li>
-      </ui>
-    </div>
+      </ul>
+    </div> -->
   </div>
 </template>
 
@@ -64,6 +64,9 @@ export default {
   methods: {
     handleClick (url) {
       window.open(url);
+    },
+    showArtical (id) {
+      this.$router.push({ path: '/artical', query: { id: id } });
     }
   },
   mounted () {

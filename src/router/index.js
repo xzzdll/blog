@@ -4,7 +4,7 @@ import layout from '@/layout/layout';
 
 Vue.use(Router);
 
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: '/',
@@ -16,8 +16,20 @@ export default new Router({
           name: 'index',
           component: resolve =>
             require(['@/views/list/index.vue'], resolve)
+        },
+        {
+          path: 'artical',
+          name: 'artical',
+          component: resolve =>
+            require(['@/views/list/artical.vue'], resolve)
         }
       ]
     }
-  ]
+  ],
+  scrollBehavior (to, from, savedPosition) {
+    // return 期望滚动到哪个的位置
+    return { x: 0, y: 0 };
+  }
 });
+
+export default router;
