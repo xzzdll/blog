@@ -22,6 +22,24 @@ const router = new Router({
           name: 'artical',
           component: resolve =>
             require(['@/views/list/artical.vue'], resolve)
+        },
+        {
+          path: 'collect',
+          name: 'collect',
+          component: resolve =>
+            require(['@/views/list/collect.vue'], resolve)
+        },
+        {
+          path: 'say',
+          name: 'say',
+          component: resolve =>
+            require(['@/views/list/say.vue'], resolve)
+        },
+        {
+          path: 'time-file',
+          name: 'time-file',
+          component: resolve =>
+            require(['@/views/list/time-file.vue'], resolve)
         }
       ]
     }
