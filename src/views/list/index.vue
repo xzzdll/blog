@@ -17,8 +17,6 @@ import { fetch } from '@/fetch/api';
 export default {
   data () {
     return {
-      pageHeight: 'auto',
-      activeIndex: '1',
       articalData: []
     };
   },

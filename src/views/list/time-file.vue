@@ -1,0 +1,70 @@
+<template>
+  <div>
+    <div class="articalCard" :key="index" v-for="(item,index) in articalData">
+      <div class="articalCardTitle">{{item.title}}</div>
+      <div class="articalCardBody" v-html='item.subString'>
+        {{item.subString}}
+      </div>
+      <div class="articalCardfoot">
+        <span @click="showArtical(item._id)">阅读全文 > ></span>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import { fetch } from '@/fetch/api';
+export default {
+  data () {
+    return {
+      articalData: []
+    };
+  },
+  mounted () {
+    fetch('artical/list').then((data) => {
+      if (data.status === 'true') {
+        data.list.forEach((tmp) => {
+          tmp.subString = tmp.content.substring(0, 200) + '...';
+        });
+        this.articalData = data.list;
+      } else {
+        this.$message.error(data.message);
+      }
+    });
+  },
+  methods: {
+    showArtical (id) {
+      this.$router.push({ path: '/artical', query: { id: id } });
+    }
+  }
+};
+</script>
+
+<style lang="scss" scoped>
+.articalCard {
+  background-color: #f7fcf6;
+  margin-bottom: 50px;
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  align-items: flex-start;
+
+  .articalCardTitle {
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .articalCardBody {
+    text-align: left;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.65);
+  }
+
+  .articalCardfoot {
+    color: #108ee9;
+    font-weight: 600;
+    cursor: pointer;
+  }
+}
+</style>
