@@ -9,8 +9,8 @@
       </el-menu>
     </el-col>
     <el-col :span="4">
-      <el-input placeholder="请输入内容" prefix-icon="el-icon-search">
-      </el-input>
+      <!-- <el-input placeholder="请输入内容" prefix-icon="el-icon-search">
+      </el-input> -->
     </el-col>
   </el-row>
 </template>

@@ -5,7 +5,7 @@
       <div style="text-align:left">
         <p style="font-size: 20px;font-weight: bold;">John</p>
         <p style="color: #999;font-size: 13px;"> 前端打字员</p>
-        <p style="color: #999;font-size: 13px;"> 文章 - 4&nbsp;&nbsp;|&nbsp;&nbsp;访问 - 4801</p>
+        <p style="color: #999;font-size: 13px;"> 文章 - 3&nbsp;&nbsp;|&nbsp;&nbsp;访问 - 4801</p>
       </div>
     </div>
     <div class="card" style="height:100px;">
@@ -38,7 +38,7 @@
         <el-button type="danger" round size="mini">Css</el-button>
       </div>
     </div>
-    <!-- <div class="card">
+    <div class="card">
       <div class="card_head">
         <span class="title">
           文章列表
@@ -49,7 +49,7 @@
           <span href="#" style="cursor:pointer;color:#40a9ff" @click="showArtical(item._id)">{{item.title}}</span>
         </li>
       </ul>
-    </div> -->
+    </div>
   </div>
 </template>
 

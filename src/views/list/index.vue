@@ -2,7 +2,11 @@
   <div>
     <div class="articalCard" :key="index" v-for="(item,index) in articalData">
       <div class="articalCardTitle">{{item.title}}</div>
-      <div class="articalCardSubTitle">发表于：{{item.date}}标签：{{item.type}}浏览：{{item.times}}</div>
+      <div class="articalCardSubTitle">
+        <span style="margin-right:10px">发表于:{{item.date}}</span>
+        <span style="margin-right:10px">标签:{{item.type}}</span>
+        <span style="margin-right:10px">浏览:{{item.times}}</span>
+      </div>
       <div class="articalCardBody" v-html='item.subString'>
         {{item.subString}}
       </div>

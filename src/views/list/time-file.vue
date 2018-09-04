@@ -6,6 +6,9 @@
           <div class="ant-timeline-item-tail"></div>
           <div class="ant-timeline-item-head ant-timeline-item-head-blue"></div>
           <div class="articalCard">
+            <div class="articalCardDate">
+              {{item.date}}
+            </div>
             <div class="articalCardBody">
               {{item.title}}
             </div>
@@ -75,8 +78,6 @@ export default {
     padding: 20px;
     position: relative;
     top: -6px;
-    border-radius: 10px;
-    background-color: #f0f0f0;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -85,6 +86,14 @@ export default {
       text-align: left;
       font-size: 14px;
       color: #40a9ff;
+    }
+
+    .articalCardDate {
+      text-align: left;
+      font-size: 20px;
+      color: #40a9ff;
+      font-weight: bold;
+      padding-bottom: 50px;
     }
 
     .date {
