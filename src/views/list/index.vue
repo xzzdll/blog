@@ -2,6 +2,7 @@
   <div>
     <div class="articalCard" :key="index" v-for="(item,index) in articalData">
       <div class="articalCardTitle">{{item.title}}</div>
+      <div class="articalCardSubTitle">发表于：{{item.date}}标签：{{item.type}}浏览：{{item.times}}</div>
       <div class="articalCardBody" v-html='item.subString'>
         {{item.subString}}
       </div>
@@ -53,6 +54,12 @@ export default {
     margin-bottom: 5px;
     font-size: 20px;
     font-weight: bold;
+  }
+
+  .articalCardSubTitle {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #999;
   }
 
   .articalCardBody {

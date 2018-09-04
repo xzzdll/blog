@@ -27,7 +27,7 @@ export default {
     }
   },
   mounted () {
-    if (!this.$route.query.id) {
+    if (!this.id) {
       this.articalData = [{
         title: '无数据',
         content: '无数据'
