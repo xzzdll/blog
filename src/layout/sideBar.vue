@@ -15,10 +15,10 @@
         </span>
       </div>
       <div style="height:50%;padding-top:15px;text-align:left">
-        <span @click="handleClick('https://github.com/JohnNight')">
+        <span @click="handleClick('https://github.com/JohnNight')" style="cursor:pointer">
           <i class="fa fa-github-square" style="font-size:32px;"></i>
         </span>
-        <span @click="handleClick('tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=634408262&website=www.oicqzone.com')" style="margin-left:10px">
+        <span @click="handleClick('tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=634408262&website=www.oicqzone.com')" style="margin-left:10px;cursor:pointer">
           <i class="fa fa-qq" style="font-size:27px;"></i>
         </span>
       </div>
