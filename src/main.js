@@ -6,6 +6,9 @@ import router from './router';
 import Vuex from 'vuex';
 import store from './vuex/store';
 import ElementUI from 'element-ui';
+import 'quill/dist/quill.core.css';
+import 'quill/dist/quill.snow.css';
+import 'quill/dist/quill.bubble.css';
 
 Vue.use(Vuex);
 Vue.use(ElementUI);

@@ -3,8 +3,14 @@
     <transition name="fade">
       <div class="articalCard" :key="index" v-for="(item,index) in articalData">
         <div class="articalCardTitle">{{item.title}}</div>
-        <div class="articalCardBody" v-html='item.content'>
-          {{item.content}}
+        <div class="articalCardBody">
+          <div class="ql-snow">
+            <div class="ql-editor">
+              <div v-html='item.content'>
+              {{item.content}}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </transition>
