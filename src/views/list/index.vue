@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="articalCard" :key="index" v-for="(item,index) in articalData">
+    <div class="articalCard" :key="index" v-for="(item,index) in articalData" @click="showArtical(item._id)">
       <div class="articalCardTitle">{{item.title}}</div>
       <div class="articalCardSubTitle">
         <span style="margin-right:10px">发表于:{{item.date}}</span>
@@ -11,9 +11,11 @@
         {{item.subString}}
       </div>
       <div class="articalCardfoot">
-        <span @click="showArtical(item._id)">阅读全文 > ></span>
+        <span>阅读全文 > ></span>
       </div>
     </div>
+    <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" class="z-pagination" :current-page.sync="currentPage" :page-size="pageSize" layout="sizes, prev, pager, next, jumper,total" :total="totalRows">
+    </el-pagination>
   </div>
 </template>
 
@@ -22,24 +24,40 @@ import { fetch } from '@/fetch/api';
 export default {
   data () {
     return {
-      articalData: []
+      articalData: [],
+      totalRows: 0,
+      currentPage: 1,
+      pageSize: 20
     };
   },
   mounted () {
-    fetch('artical/list').then((data) => {
-      if (data.status === 'true') {
-        data.list.forEach((tmp) => {
-          tmp.subString = tmp.content.substring(0, 200) + '...';
-        });
-        this.articalData = data.list;
-      } else {
-        this.$message.error(data.message);
-      }
-    });
+    this.updateData();
   },
   methods: {
     showArtical (id) {
       this.$router.push({ path: '/artical', query: { id: id } });
+    },
+    handleSizeChange (val) {
+      this.pageSize = val;
+      this.updateData();
+    },
+    handleCurrentChange (val) {
+      this.currentPage = val;
+      this.updateData();
+    },
+    updateData () {
+      fetch('artical/list', { currentPage: this.currentPage,
+        pageSize: this.pageSize }).then((data) => {
+        if (data.status === 'true') {
+          data.list.forEach((tmp) => {
+            tmp.subString = tmp.content.substring(0, 200) + '...';
+          });
+          this.articalData = data.list;
+          this.totalRows = data.totalRows;
+        } else {
+          this.$message.error(data.message);
+        }
+      });
     }
   }
 };
@@ -53,6 +71,7 @@ export default {
   padding: 20px;
   flex-direction: column;
   align-items: flex-start;
+  cursor: pointer;
 
   .articalCardTitle {
     margin-bottom: 5px;
@@ -75,7 +94,6 @@ export default {
   .articalCardfoot {
     color: #108ee9;
     font-weight: 600;
-    cursor: pointer;
   }
 }
 </style>

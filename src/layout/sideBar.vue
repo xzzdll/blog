@@ -38,7 +38,7 @@
         <el-button type="danger" round size="mini">Css</el-button>
       </div>
     </div>
-    <div class="card">
+    <div class="card" style="height:auto">
       <div class="card_head">
         <span class="title">
           文章列表
