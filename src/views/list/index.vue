@@ -54,8 +54,6 @@ export default {
           });
           this.articalData = data.list;
           this.totalRows = data.totalRows;
-        } else {
-          this.$message.error(data.message);
         }
       });
     }
