@@ -14,7 +14,7 @@
         <span>阅读全文 > ></span>
       </div>
     </div>
-    <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" class="z-pagination" :current-page.sync="currentPage" :page-size="pageSize" layout="sizes, prev, pager, next, jumper,total" :total="totalRows">
+    <el-pagination :small=true @size-change="handleSizeChange" @current-change="handleCurrentChange" class="z-pagination" :current-page.sync="currentPage" :page-size="pageSize" layout="sizes,prev, pager, next" :total="totalRows">
     </el-pagination>
   </div>
 </template>

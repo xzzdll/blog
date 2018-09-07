@@ -8,15 +8,15 @@
     </el-container>
     <el-container>
       <div style="height:100%;width:100%;padding-bottom:0">
-        <el-main style="overflow:unset;padding-bottom:0;">
+        <el-main style="overflow:unset;padding-bottom:0;padding-left:0;padding-right:0;">
           <el-container style="margin-bottom:30px">
-            <el-row :gutter="20" style="width:100%;">
-              <el-col :span="14" :offset="2">
+            <el-row style="width:100%;" type="flex" justify="center">
+              <el-col :md="14" :xs="24" :sm="24">
                 <transition name="slide-fade">
                   <router-view></router-view>
                 </transition>
               </el-col>
-              <el-col :span="6" :offset="1">
+              <el-col :md="6" class="hidden-sm-and-down" :offset="1">
                 <Siderbar></Siderbar>
               </el-col>
             </el-row>
