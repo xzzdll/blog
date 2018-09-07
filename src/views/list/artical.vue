@@ -6,7 +6,7 @@
         <div class="articalCardBody">
           <div class="ql-snow">
             <div class="ql-editor">
-              <div v-html='item.content'>
+              <div v-html='item.content' v-highlight>
               {{item.content}}
               </div>
             </div>

@@ -6,10 +6,19 @@ import router from './router';
 import Vuex from 'vuex';
 import store from './vuex/store';
 import ElementUI from 'element-ui';
+import hljs from 'highlight.js';
+import 'highlight.js/styles/monokai-sublime.css';
 import 'quill/dist/quill.core.css';
 import 'quill/dist/quill.snow.css';
 import 'quill/dist/quill.bubble.css';
 import 'element-ui/lib/theme-chalk/display.css';
+
+Vue.directive('highlight', function (el) {
+  let blocks = el.querySelectorAll('pre');
+  blocks.forEach((block) => {
+    hljs.highlightBlock(block);
+  });
+});
 
 Vue.use(Vuex);
 Vue.use(ElementUI);

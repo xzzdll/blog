@@ -27,7 +27,7 @@ export default {
       articalData: [],
       totalRows: 0,
       currentPage: 1,
-      pageSize: 20
+      pageSize: 10
     };
   },
   mounted () {
