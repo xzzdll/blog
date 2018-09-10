@@ -5,7 +5,7 @@
       <div style="text-align:left">
         <p style="font-size: 20px;font-weight: bold;">John</p>
         <p style="color: #999;font-size: 13px;"> 前端打字员</p>
-        <p style="color: #999;font-size: 13px;"> 文章 - 3&nbsp;&nbsp;|&nbsp;&nbsp;访问 - 4801</p>
+        <p style="color: #999;font-size: 13px;"> 文章 - {{number}}&nbsp;&nbsp;|&nbsp;&nbsp;访问 - {{totalVisit}}</p>
       </div>
     </div>
     <div class="card" style="height:100px;">
@@ -58,7 +58,9 @@ import { fetch } from '@/fetch/api';
 export default {
   data () {
     return {
-      articalData: []
+      articalData: [],
+      number: 0,
+      totalVisit: 0
     };
   },
   methods: {
@@ -73,10 +75,19 @@ export default {
     fetch('artical/list').then((data) => {
       if (data.status === 'true') {
         this.articalData = data.list;
+        this.number = data.list.length;
       } else {
         this.$message.error(data.message);
       }
     });
+    fetch('count/visitor').then((data) => {
+      if (data.status === 'true') {
+        this.totalVisit = data.count;
+      } else {
+        this.$message.error(data.message);
+      }
+    });
+    fetch('add/visitor', { ip: window.returnCitySN['cip'], city: window.returnCitySN['cname'] });
   }
 };
 </script>
