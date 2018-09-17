@@ -11,7 +11,7 @@
         <el-main style="overflow:unset;padding-bottom:0;padding-left:0;padding-right:0;">
           <el-container style="margin-bottom:30px">
             <el-row style="width:100%;" type="flex" justify="center">
-              <el-col :md="14" :xs="24" :sm="24">
+              <el-col :md="15" :xs="24" :sm="24">
                 <transition name="slide-fade">
                   <router-view></router-view>
                 </transition>
