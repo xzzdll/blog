@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="card" style="height:320px;">
-      <img src="../assets/img/20180828144419.jpg" style="width:75%;height:200px;margin-top:20px" />
+      <img src="../assets/img/20180828144419.jpg" style="width:200px;height:200px;margin-top:20px" />
       <div style="text-align:left">
         <p style="font-size: 20px;font-weight: bold;">John</p>
         <p style="color: #999;font-size: 13px;"> 前端打字员</p>

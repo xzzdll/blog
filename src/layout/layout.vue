@@ -16,7 +16,7 @@
                   <router-view></router-view>
                 </transition>
               </el-col>
-              <el-col :md="6" class="hidden-sm-and-down" :offset="1">
+              <el-col :md="5" class="hidden-sm-and-down" :offset="1">
                 <Siderbar></Siderbar>
               </el-col>
             </el-row>
