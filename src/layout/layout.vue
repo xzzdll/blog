@@ -57,13 +57,14 @@ export default {
   color: #333;
   text-align: center;
   line-height: 90px;
-  background: -webkit-gradient(
-    linear,
-    0 0,
-    0 bottom,
-    from(#484848),
-    to(#5a5a5a)
-  );
+  background: #e8f0e8 url(../assets/img/new_top-min.jpg) no-repeat;
+  // background: -webkit-gradient(
+  //   linear,
+  //   0 0,
+  //   0 bottom,
+  //   from(#484848),
+  //   to(#5a5a5a)
+  // );
 }
 
 .el-main {

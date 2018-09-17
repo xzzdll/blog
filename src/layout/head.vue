@@ -1,7 +1,7 @@
 <template>
     <el-container>
       <h1 style="margin-left:20%;font-size:30px;color:#fff">
-        John Blog
+        <!-- John Blog -->
       </h1>
     </el-container>
 </template>
