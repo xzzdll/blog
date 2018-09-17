@@ -8,14 +8,19 @@ import store from './vuex/store';
 import ElementUI from 'element-ui';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/monokai-sublime.css';
+import './assets/live2d/js/live2d.js';
+import './assets/live2d/js/message.js';
+import './assets/live2d/css/live2d.css';
 import 'quill/dist/quill.core.css';
 import 'quill/dist/quill.snow.css';
 import 'quill/dist/quill.bubble.css';
 import 'element-ui/lib/theme-chalk/display.css';
 
+window.loadlive2d('live2d', '/static/model/tia/model.json');
+
 Vue.directive('highlight', function (el) {
   let blocks = el.querySelectorAll('pre');
-  blocks.forEach((block) => {
+  blocks.forEach(block => {
     hljs.highlightBlock(block);
   });
 });
