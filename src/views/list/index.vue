@@ -67,6 +67,7 @@ export default {
   margin-bottom: 50px;
   display: flex;
   padding: 20px;
+  padding-left: 35px;
   flex-direction: column;
   align-items: flex-start;
   cursor: pointer;
