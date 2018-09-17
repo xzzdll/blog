@@ -1,6 +1,7 @@
 /build/
 /config/
-/src/assets/live2d/
+/src/assets/
+/static
 /dist/
 /*.js
 /test/unit/coverage/
