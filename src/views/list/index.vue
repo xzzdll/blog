@@ -14,7 +14,7 @@
         <span>阅读全文 > ></span>
       </div>
     </div>
-    <el-pagination :small=true @size-change="handleSizeChange" @current-change="handleCurrentChange" class="z-pagination" :current-page.sync="currentPage" :page-size="pageSize" layout="sizes,prev, pager, next" :total="totalRows">
+    <el-pagination v-show="pageShow" :small=true @size-change="handleSizeChange" @current-change="handleCurrentChange" class="z-pagination" :current-page.sync="currentPage" :page-size="pageSize" layout="sizes,prev, pager, next" :total="totalRows">
     </el-pagination>
   </div>
 </template>
@@ -24,6 +24,7 @@ import { fetch } from '@/fetch/api';
 export default {
   data () {
     return {
+      pageShow: false,
       articalData: [],
       totalRows: 0,
       currentPage: 1,
@@ -54,6 +55,9 @@ export default {
           });
           this.articalData = data.list;
           this.totalRows = data.totalRows;
+          this.$nextTick(() => {
+            this.pageShow = true;
+          });
         }
       });
     }

@@ -12,7 +12,7 @@
           <el-container style="margin-bottom:30px">
             <el-row style="width:100%;" type="flex" justify="center">
               <el-col :md="13" :xs="23" :sm="23">
-                <transition name="slide-fade">
+                <transition appear name="slide-fade">
                   <keep-alive>
                     <router-view></router-view>
                   </keep-alive>
@@ -91,12 +91,12 @@ export default {
 .slide-fade-enter-active {
   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
 }
-.slide-fade-leave-active {
-  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-}
-.slide-fade-enter, .slide-fade-leave-to
+// .slide-fade-leave-active {
+//   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+// }
+.slide-fade-enter
 /* .slide-fade-leave-active for below version 2.1.8 */ {
-  transform: translateX(10px);
+  transform: translateY(30px);
   opacity: 0;
 }
 </style>
