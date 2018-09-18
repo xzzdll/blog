@@ -1,6 +1,6 @@
 <template>
   <el-container>
-    <el-header style="height:160px">
+    <el-header style="height:145px">
       <Header></Header>
     </el-header>
     <el-container>
@@ -26,6 +26,7 @@
           </el-container>
         </el-main>
       </div>
+      <a class="hidden-sm-and-down" href="https://github.com/JohnNight" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
     </el-container>
   </el-container>
 </template>
@@ -55,8 +56,6 @@ export default {
 
 .el-header {
   color: #333;
-  text-align: center;
-  line-height: 90px;
   background: -webkit-gradient(
     linear,
     0 0,
