@@ -13,7 +13,9 @@
             <el-row style="width:100%;" type="flex" justify="center">
               <el-col :md="13" :xs="23" :sm="23">
                 <transition name="slide-fade">
+                  <keep-alive>
                   <router-view></router-view>
+                  </keep-alive>
                 </transition>
               </el-col>
               <el-col :md="5" class="hidden-sm-and-down" :offset="1">
