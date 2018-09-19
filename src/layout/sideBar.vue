@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="card" style="height:320px;">
-      <img src="../assets/img/20180828144419.jpg" style="width:200px;height:200px;margin-top:20px" />
+      <img src="../assets/img/20180828144419.jpg" style="width:90%;height:auto;margin-top:20px;max-width:200px;max-height:200px" />
       <div style="text-align:left">
         <p style="font-size: 20px;font-weight: bold;">John</p>
         <p style="color: #999;font-size: 13px;"> 前端打字员</p>
@@ -23,19 +23,18 @@
         </span>
       </div>
     </div>
-    <div class="card" style="height:150px;">
+    <div class="card" style="height:auto;">
       <div class="card_head" style="height:50%;">
         <span class="title">
           云标签
         </span>
       </div>
       <div style="height:50%;padding-top:15px;text-align:left">
-        <el-button type="primary" round size="mini">ES6</el-button>
-        <el-button type="success" round size="mini">React</el-button>
-        <el-button type="info" round size="mini">Vue</el-button>
-        <div style="height:5px"></div>
-        <el-button type="warning" round size="mini" style="margin-left:0">Node</el-button>
-        <el-button type="danger" round size="mini">Css</el-button>
+        <el-button class="tag" type="primary" round size="mini">ES6</el-button>
+        <el-button class="tag" type="success" round size="mini">React</el-button>
+        <el-button class="tag" type="info" round size="mini">Vue</el-button>
+        <el-button class="tag" type="warning" round size="mini">Node</el-button>
+        <el-button class="tag" type="danger" round size="mini">Css</el-button>
       </div>
     </div>
     <div class="card" style="height:auto">
@@ -93,6 +92,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.tag {
+  margin-bottom: 5px;
+  margin-left: 0px !important;
+  margin-right: 5px
+}
+
 .card {
   height: 250px;
   background-color: #f7fcf6;

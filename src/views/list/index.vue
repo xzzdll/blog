@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="articalCard" :key="index" v-for="(item,index) in articalData" @click="showArtical(item._id)">
+    <div v-show="pageShow" class="articalCard" :key="index" v-for="(item,index) in articalData" @click="showArtical(item._id)">
       <div class="articalCardTitle">{{item.title}}</div>
       <div class="articalCardSubTitle">
         <span style="margin-right:10px">发表于:{{item.date}}</span>
