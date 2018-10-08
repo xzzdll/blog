@@ -22,6 +22,19 @@
 <script>
 import { fetch } from '@/fetch/api';
 export default {
+  metaInfo: {
+    title: '归档列表',
+    meta: [
+      {
+        name: 'keywords',
+        content: '归档'
+      },
+      {
+        name: 'description',
+        content: '博客的归档列表哦'
+      }
+    ]
+  },
   data () {
     return {
       articalData: []

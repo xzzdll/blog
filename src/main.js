@@ -15,6 +15,7 @@ import 'quill/dist/quill.core.css';
 import 'quill/dist/quill.snow.css';
 import 'quill/dist/quill.bubble.css';
 import 'element-ui/lib/theme-chalk/display.css';
+import MetaInfo from 'vue-meta-info';
 
 window.loadlive2d('live2d', '/static/model/tia/model.json');
 
@@ -27,6 +28,7 @@ Vue.directive('highlight', function (el) {
 
 Vue.use(Vuex);
 Vue.use(ElementUI);
+Vue.use(MetaInfo);
 
 /* eslint-disable no-new */
 new Vue({
@@ -34,5 +36,9 @@ new Vue({
   router,
   store,
   components: { App },
-  template: '<App/>'
+  template: '<App/>',
+
+  mounted () {
+    document.dispatchEvent(new Event('render-event'));
+  }
 });

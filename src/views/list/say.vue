@@ -20,6 +20,19 @@
 <script>
 import { fetch } from '@/fetch/api';
 export default {
+  metaInfo: {
+    title: '说说列表',
+    meta: [
+      {
+        name: 'keywords',
+        content: '说说'
+      },
+      {
+        name: 'description',
+        content: '博客的说说列表哦'
+      }
+    ]
+  },
   data () {
     return {
       sayData: []

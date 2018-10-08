@@ -37,6 +37,25 @@
         <el-button class="tag" type="danger" round size="mini">Css</el-button>
       </div>
     </div>
+    <div class="card" style="height:auto;">
+      <div class="card_head" style="height:50%;">
+        <span class="title">
+          友情链接
+        </span>
+      </div>
+      <div style="height:50%;padding-top:15px;text-align:center">
+        <a href="http://laibh.top" target="_blank" style="cursor:pointer;color:#40a9ff;display:block;padding-bottom:5px">赖同学's blog
+        </a>
+        <a href="http://i-tech.tech" target="_blank" style="cursor:pointer;color:#40a9ff;display:block;padding-bottom:5px">叶老师's blog
+        </a>
+        <a href="http://www.cnblogs.com/cnyball" target="_blank" style="cursor:pointer;color:#40a9ff;display:block;padding-bottom:5px">C++大佬's blog
+        </a>
+        <a href="http://xiaojun1994.top" target="_blank" style="cursor:pointer;color:#40a9ff;display:block;padding-bottom:5px">xiaojun's blog
+        </a>
+        <a href="https://www.cnblogs.com/DarkInNight/" target="_blank" style="cursor:pointer;color:#40a9ff;display:block;padding-bottom:5px">回忆踩着风's blog
+        </a>
+      </div>
+    </div>
     <div class="card" style="height:auto">
       <div class="card_head">
         <span class="title">
@@ -95,7 +114,7 @@ export default {
 .tag {
   margin-bottom: 5px;
   margin-left: 0px !important;
-  margin-right: 5px
+  margin-right: 5px;
 }
 
 .card {

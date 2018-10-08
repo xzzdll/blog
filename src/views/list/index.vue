@@ -22,6 +22,19 @@
 <script>
 import { fetch } from '@/fetch/api';
 export default {
+  metaInfo: {
+    title: '主页',
+    meta: [
+      {
+        name: 'keywords',
+        content: 'John，blog'
+      },
+      {
+        name: 'description',
+        content: 'John的小小博客'
+      }
+    ]
+  },
   data () {
     return {
       pageShow: false,

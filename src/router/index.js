@@ -24,12 +24,6 @@ const router = new Router({
             require(['@/views/list/artical.vue'], resolve)
         },
         {
-          path: 'collect',
-          name: 'collect',
-          component: resolve =>
-            require(['@/views/list/collect.vue'], resolve)
-        },
-        {
           path: 'say',
           name: 'say',
           component: resolve =>
@@ -47,7 +41,8 @@ const router = new Router({
   scrollBehavior (to, from, savedPosition) {
     // return 期望滚动到哪个的位置
     return { x: 0, y: 0 };
-  }
+  },
+  mode: 'history'
 });
 
 export default router;

@@ -7,7 +7,7 @@
           <div class="ql-snow">
             <div class="ql-editor">
               <div v-html='item.content' v-highlight>
-              {{item.content}}
+                {{item.content}}
               </div>
             </div>
           </div>
@@ -20,6 +20,19 @@
 <script>
 import { fetch } from '@/fetch/api';
 export default {
+  metaInfo: {
+    title: '文章列表',
+    meta: [
+      {
+        name: 'keywords',
+        content: 'vue,js,ES6'
+      },
+      {
+        name: 'description',
+        content: '博客的文章列表哦'
+      }
+    ]
+  },
   data () {
     return {
       pageHeight: 'auto',
