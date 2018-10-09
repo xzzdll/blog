@@ -80,7 +80,7 @@ export default {
 
 <style lang="scss" scoped>
 .articalCard {
-  background-color: #f7fcf6;
+  // background-color: #f7fcf6;
   margin-bottom: 50px;
   display: flex;
   padding: 20px;
@@ -90,13 +90,13 @@ export default {
   cursor: pointer;
 
   .articalCardTitle {
-    margin-bottom: 5px;
-    font-size: 20px;
+    // margin-bottom: 5px;
+    font-size: 25px;
     font-weight: bold;
   }
 
   .articalCardSubTitle {
-    margin-bottom: 5px;
+    // margin-bottom: 5px;
     font-size: 14px;
     color: #999;
   }

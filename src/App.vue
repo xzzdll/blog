@@ -18,6 +18,6 @@ export default {
   color: #2c3e50;
   width: 100%;
   margin: auto;
-  background-color:#ececec;
+  /* background-color:#ececec; */
 }
 </style>
