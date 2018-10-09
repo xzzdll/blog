@@ -1,6 +1,5 @@
 <template>
   <div>
-    <transition name="fade">
       <div class="articalCard" :key="index" v-for="(item,index) in articalData">
         <div class="articalCardTitle">{{item.title}}</div>
         <div class="articalCardBody">
@@ -13,7 +12,6 @@
           </div>
         </div>
       </div>
-    </transition>
   </div>
 </template>
 
@@ -77,12 +75,12 @@ export default {
 
 <style lang="scss" scoped>
 .articalCard {
-  background-color: #f7fcf6;
+  // background-color: #f7fcf6;
   margin-bottom: 50px;
   display: flex;
   padding: 20px;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
 
   .articalCardTitle {
     margin-bottom: 5px;
@@ -92,7 +90,7 @@ export default {
 
   .articalCardBody {
     width: 100%;
-    text-align: left;
+    text-align: center;
     font-size: 14px;
     color: rgba(0, 0, 0, 0.65);
   }

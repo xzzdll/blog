@@ -1,7 +1,7 @@
 <template>
-  <el-row :gutter="0" style="width:100%;background-color: #444;" type="flex" justify="center">
+  <el-row :gutter="0" style="width:100%;background-color: #f5f5f5;" type="flex" justify="center">
     <el-col :md="15" :xs="23" :sm="23">
-      <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" background-color="#444" text-color="#fff" active-text-color="#56adf9" style="border-bottom:none;" router>
+      <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" background-color="#f5f5f5" text-color="#000" active-text-color="#56adf9" style="border-bottom:none;" router>
         <el-menu-item index="index" style="font-size:17px">
           <i class="el-icon-document" style="vertical-align:unset"></i>文章</el-menu-item>
         <el-menu-item index="say" style="font-size:17px">

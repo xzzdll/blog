@@ -1,21 +1,25 @@
 <template>
   <div>
-    <div v-show="pageShow" class="articalCard" :key="index" v-for="(item,index) in articalData" @click="showArtical(item._id)">
-      <div class="articalCardTitle">{{item.title}}</div>
-      <div class="articalCardSubTitle">
-        <span style="margin-right:10px">发表于:{{item.date}}</span>
-        <span style="margin-right:10px">标签:{{item.type}}</span>
-        <span style="margin-right:10px">浏览:{{item.times}}</span>
-      </div>
-      <div class="articalCardBody" v-html='item.subString'>
-        {{item.subString}}
-      </div>
-      <div class="articalCardfoot">
-        <span>阅读全文 > ></span>
+    <div class="ql-snow">
+      <div class="ql-editor">
+        <div v-show="pageShow" class="articalCard" :key="index" v-for="(item,index) in articalData" @click="showArtical(item._id)">
+          <div class="articalCardTitle">{{item.title}}</div>
+          <div class="articalCardSubTitle">
+            <span style="margin-right:10px">发表于:{{item.date}}</span>
+            <span style="margin-right:10px">标签:{{item.type}}</span>
+            <span style="margin-right:10px">浏览:{{item.times}}</span>
+          </div>
+          <div class="articalCardBody" v-html='item.content'>
+            {{item.content}}
+          </div>
+          <div class="articalCardfoot">
+            <span>阅读全文 > ></span>
+          </div>
+        </div>
+        <el-pagination v-show="pageShow" :small=true @size-change="handleSizeChange" @current-change="handleCurrentChange" class="z-pagination" :current-page.sync="currentPage" :page-size="pageSize" layout="sizes,prev, pager, next" :total="totalRows">
+        </el-pagination>
       </div>
     </div>
-    <el-pagination v-show="pageShow" :small=true @size-change="handleSizeChange" @current-change="handleCurrentChange" class="z-pagination" :current-page.sync="currentPage" :page-size="pageSize" layout="sizes,prev, pager, next" :total="totalRows">
-    </el-pagination>
   </div>
 </template>
 
@@ -63,9 +67,6 @@ export default {
       fetch('artical/list', { currentPage: this.currentPage,
         pageSize: this.pageSize }).then((data) => {
         if (data.status === 'true') {
-          data.list.forEach((tmp) => {
-            tmp.subString = tmp.content.substring(0, 200) + '...';
-          });
           this.articalData = data.list;
           this.totalRows = data.totalRows;
           this.$nextTick(() => {
@@ -102,6 +103,7 @@ export default {
   }
 
   .articalCardBody {
+    width:100%;
     text-align: left;
     font-size: 14px;
     color: rgba(0, 0, 0, 0.65);

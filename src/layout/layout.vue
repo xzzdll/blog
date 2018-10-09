@@ -1,8 +1,8 @@
 <template>
   <el-container>
-    <el-row>
-      <el-col :md="sidebar?19:24">
-        <el-header style="height:145px;position:relative">
+    <el-row :style="{'padding-right':sidebar ? '320px' :'0px',width:'100%'}">
+      <el-col class="main">
+        <el-header style="height:110px;position:relative">
           <Header></Header>
           <github></github>
         </el-header>
@@ -14,16 +14,13 @@
             <el-main style="overflow:unset;padding-bottom:0;padding-left:0;padding-right:0;">
               <el-container style="margin-bottom:30px">
                 <el-row style="width:100%;" type="flex" justify="center">
-                  <el-col :md="14" :xs="15" :sm="15">
+                  <el-col :md="15">
                     <transition appear name="slide-fade">
                       <keep-alive>
                         <router-view></router-view>
                       </keep-alive>
                     </transition>
                   </el-col>
-                  <!-- <el-col :md="5" class="hidden-sm-and-down" :offset="1">
-                <Siderbar></Siderbar>
-              </el-col> -->
                 </el-row>
               </el-container>
               <el-container>
@@ -33,7 +30,7 @@
           </div>
         </el-container>
       </el-col>
-      <el-col v-if="sidebar" :md="5">
+      <el-col class="side" :style="{ width:sidebar ? '320px' :'0' }">
         <Siderbar></Siderbar>
       </el-col>
     </el-row>
@@ -61,6 +58,19 @@ export default {
 </script>
 
 <style lang="scss">
+.main {
+  position: relative;
+}
+
+.side {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  box-shadow: inset 0 2px 6px #000;
+}
+
 .el-footer {
   color: #333;
   text-align: center;
@@ -68,13 +78,14 @@ export default {
 
 .el-header {
   color: #333;
-  background: -webkit-gradient(
-    linear,
-    0 0,
-    0 bottom,
-    from(#484848),
-    to(#5a5a5a)
-  );
+  // background: -webkit-gradient(
+  //   linear,
+  //   0 0,
+  //   0 bottom,
+  //   from(#484848),
+  //   to(#5a5a5a)
+  // );
+  background-color: #f5f5f5;
 }
 
 .el-main {
@@ -102,42 +113,5 @@ export default {
 /* .slide-fade-leave-active for below version 2.1.8 */ {
   transform: translateY(30px);
   opacity: 0;
-}
-</style>
-
-<style>
-.gay-hub {
-  fill: rgb(52, 147, 239);
-  color: #fff;
-  position: absolute;
-  top: 0;
-  border: 0;
-  right: 0;
-}
-
-.github-corner:hover .octo-arm {
-  animation: octocat-wave 560ms ease-in-out;
-}
-@keyframes octocat-wave {
-  0%,
-  100% {
-    transform: rotate(0);
-  }
-  20%,
-  60% {
-    transform: rotate(-25deg);
-  }
-  40%,
-  80% {
-    transform: rotate(10deg);
-  }
-}
-@media (max-width: 500px) {
-  .github-corner:hover .octo-arm {
-    animation: none;
-  }
-  .github-corner .octo-arm {
-    animation: octocat-wave 560ms ease-in-out;
-  }
 }
 </style>
