@@ -35,7 +35,9 @@
       </el-col>
     </el-row>
     <div style="position: fixed; right: 50px;
-    bottom:50px;cursor:pointer" v-on:click="sidebar = !sidebar"> <i class="el-icon-d-arrow-left" style="font-size: 25px"></i> </div>
+    bottom:50px;cursor:pointer" v-on:click="sidebar = !sidebar"> <i v-if="!sidebar" class="el-icon-d-arrow-left" style="font-size: 25px"></i>
+      <i v-else class="el-icon-close" style="font-size: 25px;color:white"></i>
+    </div>
   </el-container>
 </template>
 

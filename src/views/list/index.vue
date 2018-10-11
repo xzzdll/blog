@@ -12,6 +12,7 @@
           <div class="articalCardBody" v-html='item.content'>
             {{item.content}}
           </div>
+          <p>....</p>
           <div class="articalCardfoot">
             <span>阅读全文 > ></span>
           </div>
@@ -91,13 +92,13 @@ export default {
   cursor: pointer;
 
   .articalCardTitle {
-    // margin-bottom: 5px;
+    margin-bottom: 5px;
     font-size: 25px;
     font-weight: bold;
   }
 
   .articalCardSubTitle {
-    // margin-bottom: 5px;
+    margin-bottom: 8px;
     font-size: 14px;
     color: #999;
   }
@@ -107,6 +108,7 @@ export default {
     text-align: left;
     font-size: 14px;
     color: rgba(0, 0, 0, 0.65);
+    margin-bottom: 8px;
   }
 
   .articalCardfoot {

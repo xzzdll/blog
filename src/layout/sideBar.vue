@@ -43,16 +43,17 @@
           友情链接
         </span>
       </div>
-      <div style="height:50%;padding-top:15px;text-align:center">
-        <a href="http://laibh.top" target="_blank" style="cursor:pointer;color:rgb(153, 153, 153);display:block;padding-bottom:5px">赖同学's blog
+      <div style="height:50%;padding-top:15px;text-align:left">
+        <a href="http://laibh.top" target="_blank"
+        class="friendLink">赖同学
         </a>
-        <a href="http://i-tech.tech" target="_blank" style="cursor:pointer;color:rgb(153, 153, 153);display:block;padding-bottom:5px">叶老师's blog
+        <a href="http://i-tech.tech" target="_blank" class="friendLink">叶老师
         </a>
-        <a href="http://www.cnblogs.com/cnyball" target="_blank" style="cursor:pointer;color:rgb(153, 153, 153);display:block;padding-bottom:5px">C++大佬's blog
+        <a href="http://www.cnblogs.com/cnyball" target="_blank" class="friendLink">C++大佬
         </a>
-        <a href="http://xiaojun1994.top" target="_blank" style="cursor:pointer;color:rgb(153, 153, 153);display:block;padding-bottom:5px">xiaojun's blog
+        <a href="http://xiaojun1994.top" target="_blank" class="friendLink">xiaojun
         </a>
-        <a href="https://www.cnblogs.com/DarkInNight/" target="_blank" style="cursor:pointer;color:rgb(153, 153, 153);display:block;padding-bottom:5px">回忆踩着风's blog
+        <a href="https://www.cnblogs.com/DarkInNight/" target="_blank" class="friendLink">回忆踩着风
         </a>
       </div>
     </div>
@@ -115,6 +116,14 @@ export default {
   margin-bottom: 5px;
   margin-left: 0px !important;
   margin-right: 5px;
+}
+
+.friendLink {
+  cursor: pointer;
+  color: rgb(153, 153, 153);
+  // display: block;
+  padding-right:10px;
+  line-height: 30px;
 }
 
 .card {
