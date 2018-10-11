@@ -3,7 +3,7 @@
     <div class="card" style="height:300px;">
       <img src="../assets/img/20180828144419.jpg" style="width:50%;height:auto;margin-top:20px;max-width:200px;max-height:200px;margin-left:25%;" />
       <div style="text-align:center">
-        <p style="font-size: 20px;font-weight: bold;color:rgb(153, 153, 153);">John</p>
+        <p style="font-size: 20px;font-weight: bold;color:rgb(153, 153, 153);">xzzdll</p>
         <p style="color: #999;font-size: 13px;"> 前端打字员</p>
         <p style="color: #999;font-size: 13px;"> 文章 - {{number}}&nbsp;&nbsp;|&nbsp;&nbsp;访问 - {{totalVisit}}</p>
       </div>
@@ -91,14 +91,14 @@ export default {
     }
   },
   mounted () {
-    // fetch('artical/list').then((data) => {
-    //   if (data.status === 'true') {
-    //     this.articalData = data.list;
-    //     this.number = data.list.length;
-    //   } else {
-    //     this.$message.error(data.message);
-    //   }
-    // });
+    fetch('artical/list').then((data) => {
+      if (data.status === 'true') {
+        this.articalData = data.list;
+        this.number = data.list.length;
+      } else {
+        this.$message.error(data.message);
+      }
+    });
     fetch('count/visitor').then((data) => {
       if (data.status === 'true') {
         this.totalVisit = data.count;
