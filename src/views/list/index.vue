@@ -1,24 +1,23 @@
 <template>
   <div>
     <div class="ql-snow">
-      <div class="ql-editor">
-        <div v-show="pageShow" class="articalCard" :key="index" v-for="(item,index) in articalData" @click="showArtical(item._id)">
+        <div v-show="pageShow" class="articalCard ql-editor" :key="index" v-for="(item,index) in articalData" @click="showArtical(item._id)">
           <div class="articalCardTitle">{{item.title}}</div>
           <div class="articalCardSubTitle">
             <span style="margin-right:10px">发表于:{{item.date}}</span>
             <span style="margin-right:10px">标签:{{item.type}}</span>
             <span style="margin-right:10px">浏览:{{item.times}}</span>
           </div>
-          <div class="articalCardBody" v-html='item.content'>
+          <div class="articalCardBody" v-html='item.content' v-highlight>
             {{item.content}}
           </div>
+          <p>....</p>
           <div class="articalCardfoot">
             <span>阅读全文 > ></span>
           </div>
         </div>
-        <el-pagination v-show="pageShow" :small=true @size-change="handleSizeChange" @current-change="handleCurrentChange" class="z-pagination" :current-page.sync="currentPage" :page-size="pageSize" layout="sizes,prev, pager, next" :total="totalRows">
-        </el-pagination>
-      </div>
+      <el-pagination v-show="pageShow" :small=true @size-change="handleSizeChange" @current-change="handleCurrentChange" class="z-pagination" :current-page.sync="currentPage" :page-size="pageSize" layout="sizes,prev, pager, next" :total="totalRows">
+      </el-pagination>
     </div>
   </div>
 </template>
@@ -91,22 +90,21 @@ export default {
   cursor: pointer;
 
   .articalCardTitle {
-    // margin-bottom: 5px;
+    margin-bottom: 5px;
     font-size: 25px;
     font-weight: bold;
   }
 
   .articalCardSubTitle {
-    // margin-bottom: 5px;
+    margin-bottom: 8px;
     font-size: 14px;
     color: #999;
   }
 
   .articalCardBody {
-    width:100%;
+    width: 100%;
+    margin-bottom: 8px;
     text-align: left;
-    font-size: 14px;
-    color: rgba(0, 0, 0, 0.65);
   }
 
   .articalCardfoot {
@@ -114,4 +112,12 @@ export default {
     font-weight: 600;
   }
 }
+</style>
+
+<style lang="scss">
+// .ql-snow .ql-editor pre.ql-syntax {
+  // background-color: #f7f7f7;
+  // // background-color: #23241f;
+  // color: #000;
+// }
 </style>
