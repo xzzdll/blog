@@ -18,7 +18,6 @@
     "element-ui": "^2.4.0",
     "highlight.js": "^9.12.0",
     "node-sass": "^4.9.3",
-    "prerender-spa-plugin": "^3.4.0",
     "vue": "^2.5.2",
     "vue-meta-info": "^0.1.7",
     "vue-quill-editor": "^3.0.6",
