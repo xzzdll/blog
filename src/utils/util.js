@@ -6,7 +6,15 @@ export const formatJson = function (filterVal, list) {
   return list.map(v => filterVal.map(j => v[j]));
 };
 
-var weeks = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+var weeks = [
+  '星期日',
+  '星期一',
+  '星期二',
+  '星期三',
+  '星期四',
+  '星期五',
+  '星期六'
+];
 export const util = {
   extend: function () {
     var options;
@@ -54,7 +62,11 @@ export const util = {
           }
 
           // Recurse if we're merging plain objects or arrays
-          if (deep && copy && (copy.constructor === Object || (copyIsArray = Array.isArray(copy)))) {
+          if (
+            deep &&
+            copy &&
+            (copy.constructor === Object || (copyIsArray = Array.isArray(copy)))
+          ) {
             if (copyIsArray) {
               copyIsArray = false;
               clone = src && Array.isArray(src) ? src : [];
@@ -120,45 +132,44 @@ export const util = {
 
     return (
       date.year +
-            '-' +
-            date.month +
-            '-' +
-            date.day +
-            ' ' +
-            time.hours +
-            ':' +
-            time.minutes +
-            ':' +
-            time.seconds +
-            ' ' +
-            week.week
+      '-' +
+      date.month +
+      '-' +
+      date.day +
+      ' ' +
+      time.hours +
+      ':' +
+      time.minutes +
+      ':' +
+      time.seconds +
+      ' ' +
+      week.week
     );
   },
   getCurDateWithOutTimeWeek: function () {
     var date = this.getCurDate();
 
-    return (
-      date.year +
-            '-' +
-            date.month +
-            '-' +
-            date.day
-    );
+    return date.year + '-' + date.month + '-' + date.day;
   },
   initDateTime (iStartNum, iEndNum) {
     iStartNum = iStartNum || 0;
     iEndNum = iEndNum || 0;
     // 初始化日期时间
     var dateObj = new Date();
-    var oStartDate = new Date(new Date().setDate(dateObj.getDate() - iStartNum));
+    var oStartDate = new Date(
+      new Date().setDate(dateObj.getDate() - iStartNum)
+    );
     var oEndDate = new Date(new Date().setDate(dateObj.getDate() - iEndNum));
     var sEndDate =
-            '' + oEndDate.getFullYear() + this.fixedDouble(oEndDate.getMonth() + 1) + this.fixedDouble(oEndDate.getDate());
+      '' +
+      oEndDate.getFullYear() +
+      this.fixedDouble(oEndDate.getMonth() + 1) +
+      this.fixedDouble(oEndDate.getDate());
     var sStartDate =
-            '' +
-            oStartDate.getFullYear() +
-            this.fixedDouble(oStartDate.getMonth() + 1) +
-            this.fixedDouble(oStartDate.getDate());
+      '' +
+      oStartDate.getFullYear() +
+      this.fixedDouble(oStartDate.getMonth() + 1) +
+      this.fixedDouble(oStartDate.getDate());
     return {
       sStartDate: sStartDate,
       sEndDate: sEndDate
@@ -172,7 +183,14 @@ export const util = {
 
     // noSec: 年月日
     if (type === 'noSec') {
-      let sDate = new Date(item.substring(0, 4) + '-' + item.substring(4, 6) + '-' + item.substring(6, 8) + ' 00:00:00');
+      let sDate = new Date(
+        item.substring(0, 4) +
+          '-' +
+          item.substring(4, 6) +
+          '-' +
+          item.substring(6, 8) +
+          ' 00:00:00'
+      );
       return sDate;
     }
 
@@ -180,16 +198,16 @@ export const util = {
     if (type === 'hasSec') {
       let sDate = new Date(
         item.substring(0, 4) +
-                '-' +
-                item.substring(4, 6) +
-                '-' +
-                item.substring(6, 8) +
-                ' ' +
-                item.substring(8, 10) +
-                ':' +
-                item.substring(10, 12) +
-                ':' +
-                item.substring(12, 14)
+          '-' +
+          item.substring(4, 6) +
+          '-' +
+          item.substring(6, 8) +
+          ' ' +
+          item.substring(8, 10) +
+          ':' +
+          item.substring(10, 12) +
+          ':' +
+          item.substring(12, 14)
       );
       return sDate;
     }
@@ -300,5 +318,13 @@ export const util = {
     // }
 
     return len;
+  },
+  removeTag (description) {
+    description = description.replace(/(\n)/g, '');
+    description = description.replace(/(\t)/g, '');
+    description = description.replace(/(\r)/g, '');
+    description = description.replace(/<\/?[^>]*>/g, '');
+    description = description.replace(/\s*/g, '');
+    return description;
   }
 };
