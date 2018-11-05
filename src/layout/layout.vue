@@ -7,7 +7,6 @@
           <github></github>
         </el-header>
         <el-container>
-          <Menu></Menu>
         </el-container>
         <el-container>
           <div style="height:100%;width:100%;padding-bottom:0">

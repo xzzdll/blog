@@ -27,7 +27,7 @@ import { fetch } from '@/fetch/api';
 import { util } from '@/utils/util';
 export default {
   metaInfo: {
-    title: '主页',
+    title: "xzzdll's blog",
     meta: [
       {
         name: 'keywords',
@@ -107,6 +107,7 @@ export default {
   }
 
   .articalCardBody {
+    overflow: hidden;
     width: 100%;
     margin-bottom: 0px;
     text-align: left;
