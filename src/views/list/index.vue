@@ -101,23 +101,26 @@ export default {
   }
 
   .articalCardSubTitle {
-    margin-bottom: 8px;
+    margin-bottom: 20px;
     font-size: 14px;
     color: #999;
+    line-height: 2;
   }
 
   .articalCardBody {
     overflow: hidden;
     width: 100%;
-    margin-bottom: 0px;
     text-align: left;
     font-size: 14px !important;
+    line-height: 2;
     color: rgb(85, 85, 85) !important;
   }
 
   .articalCardfoot {
+    margin-top:20px;
     color: rgb(85, 85, 85);
-    font-weight: 600;
+    font-size: 14px !important;
+    line-height: 2;
     border-bottom: 2px solid rgb(102, 102, 102);
   }
 }
