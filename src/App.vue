@@ -18,6 +18,7 @@ export default {
   color: #2c3e50;
   width: 100%;
   margin: auto;
+  /* margin-right: calc(100vw - 100%); */
   /* background-color:#ececec; */
 }
 </style>

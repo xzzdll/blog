@@ -1,10 +1,9 @@
 <template>
   <el-container>
-    <el-row :style="{'padding-right':sidebar ? '320px' :'0px',width:'100%'}">
-      <el-col class="main">
+    <el-row class="main" :style="{'right':sidebar ? '160px' :'0px',width:'100%'}">
+      <el-col>
         <el-header style="height:110px;position:relative">
           <Header></Header>
-          <github></github>
         </el-header>
         <el-container>
         </el-container>
@@ -13,7 +12,7 @@
             <el-main style="overflow:unset;padding-bottom:0;padding-left:0;padding-right:0;">
               <el-container style="margin-bottom:30px">
                 <el-row style="width:100%;" type="flex" justify="center">
-                  <el-col :md="13">
+                  <el-col :md="14">
                     <transition appear name="slide-fade">
                       <keep-alive>
                         <router-view></router-view>
@@ -29,12 +28,13 @@
           </div>
         </el-container>
       </el-col>
-      <el-col class="side" :style="{ width:sidebar ? '320px' :'0' }">
-        <Siderbar></Siderbar>
-      </el-col>
     </el-row>
+    <div class="side" :style="{ right:sidebar ? '0' :'-320px' }">
+      <github></github>
+      <Siderbar></Siderbar>
+    </div>
     <div style="position: fixed; right: 50px;
-    bottom:70px;cursor:pointer" v-on:click="sidebar = !sidebar" class="hidden-sm-and-down">
+    bottom:70px;cursor:pointer;z-index: 10001;" v-on:click="sidebar = !sidebar">
       <i v-if="!sidebar" class="el-icon-d-arrow-left" style="font-size: 25px"></i>
       <i v-else class="el-icon-close" style="font-size: 25px;color:white"></i>
     </div>
@@ -53,8 +53,24 @@ export default {
   },
   data () {
     return {
-      sidebar: false
+      sidebar: true
     };
+  },
+  mounted () {
+    var userAgentInfo = navigator.userAgent;
+    var Agents = ['Android', 'iPhone',
+      'SymbianOS', 'Windows Phone',
+      'iPad', 'iPod'];
+    var flag = true;
+    for (var v = 0; v < Agents.length; v++) {
+      if (userAgentInfo.includes(Agents[v]) > 0) {
+        flag = false;
+        break;
+      }
+    }
+    if (!flag) {
+      this.sidebar = false;
+    }
   }
 };
 </script>
@@ -62,15 +78,24 @@ export default {
 <style lang="scss">
 .main {
   position: relative;
+  transition: right 0.5s;
+  -moz-transition: right 0.5s; /* Firefox 4 */
+  -webkit-transition: right 0.5s; /* Safari 和 Chrome */
+  -o-transition: right 0.5s; /* Opera */
 }
 
 .side {
+  transition: right 0.5s;
+  -moz-transition: right 0.5s; /* Firefox 4 */
+  -webkit-transition: right 0.5s; /* Safari 和 Chrome */
+  -o-transition: right 0.5s; /* Opera */
   position: fixed;
   right: 0;
   top: 0;
   bottom: 0;
-  width: 0;
+  width: 320px;
   box-shadow: inset 0 2px 6px #000;
+  z-index: 9999;
 }
 
 .el-footer {

@@ -133,6 +133,7 @@ export default {
   padding: 30px;
   padding-bottom: 0px;
   padding-top: 0px;
+  z-index: 9999;
   .card_head {
     height: 20%;
     border-bottom: 1px solid #e8e8e8;

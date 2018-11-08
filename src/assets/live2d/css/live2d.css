@@ -1,13 +1,14 @@
 #landlord {
     user-select: none;
     position: fixed;
-    left: 0;
-    bottom: 0;
+    right: 0;
+    bottom: 150px;
     width: 280px;
     height: 250px;
-    z-index: 10000;
+    z-index: 9998;
     font-size: 0;
     transition: all .3s ease-in-out;
+    opacity:0.9
 }
 
 #live2d {

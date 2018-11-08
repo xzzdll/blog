@@ -24,7 +24,7 @@ export default {
   position: absolute;
   top: 0;
   border: 0;
-  right: 0;
+  left: -80px;
 }
 
 .github-corner:hover .octo-arm {
