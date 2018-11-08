@@ -13,7 +13,7 @@
             <el-main style="overflow:unset;padding-bottom:0;padding-left:0;padding-right:0;">
               <el-container style="margin-bottom:30px">
                 <el-row style="width:100%;" type="flex" justify="center">
-                  <el-col :md="15">
+                  <el-col :md="13">
                     <transition appear name="slide-fade">
                       <keep-alive>
                         <router-view></router-view>
