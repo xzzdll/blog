@@ -24,7 +24,6 @@
 
 <script>
 import { fetch } from '@/fetch/api';
-import { util } from '@/utils/util';
 export default {
   metaInfo: {
     title: "xzzdll's blog",
@@ -68,9 +67,6 @@ export default {
         pageSize: this.pageSize }).then((data) => {
         if (data.status === 'true') {
           this.articalData = data.list;
-          this.articalData.forEach(x => {
-            x.content = util.removeTag(x.content);
-          });
           this.totalRows = data.totalRows;
           this.$nextTick(() => {
             this.pageShow = true;
