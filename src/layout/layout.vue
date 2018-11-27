@@ -46,10 +46,9 @@ import Header from './head';
 import Siderbar from './sideBar';
 import Footer from './foot';
 import Menu from './menu';
-import github from '@/components/github';
 export default {
   components: {
-    Header, Siderbar, Footer, Menu, github
+    Header, Siderbar, Footer, Menu
   },
   data () {
     return {
