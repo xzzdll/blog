@@ -16,7 +16,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "element-ui": "^2.4.0",
-    "fs-components": "^1.7.0",
+    "fs-components": "^1.9.5",
     "highlight.js": "^9.12.0",
     "node-sass": "^4.9.3",
     "vue": "^2.5.2",

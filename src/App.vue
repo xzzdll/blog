@@ -1,6 +1,7 @@
 <template>
   <div id="app" style="height:100%;">
     <router-view></router-view>
+    <waterMack style="padding-left:100px" curDate="测试"/>
   </div>
 </template>
 

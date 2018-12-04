@@ -6,7 +6,7 @@ import router from './router';
 import Vuex from 'vuex';
 import store from './vuex/store';
 import ElementUI from 'element-ui';
-import github from 'fs-components';
+import waterMack from 'fs-components';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/monokai-sublime.css';
 import './assets/live2d/js/live2d.js';
@@ -29,7 +29,7 @@ Vue.directive('highlight', function (el) {
 
 Vue.use(Vuex);
 Vue.use(ElementUI);
-Vue.use(github);
+Vue.use(waterMack);
 Vue.use(MetaInfo);
 
 /* eslint-disable no-new */
