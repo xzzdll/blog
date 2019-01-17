@@ -6,8 +6,6 @@
           <Header></Header>
         </el-header>
         <el-container>
-        </el-container>
-        <el-container>
           <div style="height:100%;width:100%;padding-bottom:0">
             <el-main style="overflow:unset;padding-bottom:0;padding-left:0;padding-right:0;">
               <el-container style="margin-bottom:30px">
